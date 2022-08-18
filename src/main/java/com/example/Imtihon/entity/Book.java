@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -29,7 +30,7 @@ public class Book {
     @Column(name = "price")
     private Double price;
 
-    @Column(name = "publiked_at")
+    @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date publiked_at;
 
     @Column(name = "publiked_by")

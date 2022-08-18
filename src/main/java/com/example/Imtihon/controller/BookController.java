@@ -28,7 +28,7 @@ public class BookController {
 
     @PostMapping
 //    @Scope(scopeName = "")
-    public ResponsDto<List<String>> addbook(@RequestBody  BookDto bookDto){
+    public ResponsDto<List<String>> addbook(@RequestBody @Valid BookDto bookDto){
         List<ResponsValidation> list =  bookValidation.valid(bookDto);
         if(!list.isEmpty()){
             return ResponsDto.<List<String>>builder()
